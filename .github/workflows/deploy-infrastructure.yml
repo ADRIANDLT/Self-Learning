@@ -9,10 +9,10 @@ jobs:
   deploy-infrastructure:
     runs-on: ubuntu-latest
     env:
-      ACR_NAME: myacrname
-      IMAGE_NAME: myimagename
+      ACR_NAME: myContainerRegistry
+      IMAGE_NAME: myAppImage
       IMAGE_TAG: latest
-      RESOURCE_GROUP: myresourcegroup
+      RESOURCE_GROUP: myResourceGroup
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -36,4 +36,4 @@ jobs:
         az deployment group create \
           --resource-group $RESOURCE_GROUP \
           --template-file main.bicep \
-          --parameters main.parameters.json
+          --parameters @main.parameters.json
