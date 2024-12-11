@@ -12,3 +12,6 @@ resource acr 'Microsoft.ContainerRegistry/registries@2021-09-01-preview' = {
     adminUserEnabled: acrAdminUserEnabled
   }
 }
+
+output adminUsername string = listCredentials(acr.id, '2021-09-01-preview').username
+output adminPassword string = listCredentials(acr.id, '2021-09-01-preview').passwords[0].value

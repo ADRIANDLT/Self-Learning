@@ -13,3 +13,5 @@ resource servicePlan 'Microsoft.Web/serverfarms@2021-02-01' = {
     reserved: reserved
   }
 }
+
+output serverFarmResourceId string = servicePlan.id

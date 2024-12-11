@@ -43,15 +43,15 @@ module webApp './modules/azureWebApp.bicep' = {
     name: webAppName
     location: webAppLocation
     kind: webAppKind
-    serverFarmResourceId: resourceId('Microsoft.Web/serverfarms', appServicePlanName)
+    serverFarmResourceId: servicePlan.outputs.serverFarmResourceId
     siteConfig: {
       linuxFxVersion: 'DOCKER|${containerRegistryName}.azurecr.io/${containerRegistryImageName}:${containerRegistryImageVersion}'
       appCommandLine: ''
       appSettingsKeyValuePairs: {
         WEBSITES_ENABLE_APP_SERVICE_STORAGE: false
         DOCKER_REGISTRY_SERVER_URL: 'https://${containerRegistryName}.azurecr.io'
-        DOCKER_REGISTRY_SERVER_USERNAME: acr.properties.credentials.username
-        DOCKER_REGISTRY_SERVER_PASSWORD: acr.properties.credentials.passwords[0].value
+        DOCKER_REGISTRY_SERVER_USERNAME: acr.outputs.adminUsername
+        DOCKER_REGISTRY_SERVER_PASSWORD: acr.outputs.adminPassword
       }
     }
   }
