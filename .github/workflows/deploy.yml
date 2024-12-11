@@ -23,6 +23,6 @@ jobs:
       with:
         scope: resourcegroup
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-        resourceGroupName: DEV
+        resourceGroupName: BCSAI2024-DEVOPS-STUDENTS-B-DEV
         template: ./iac/main.bicep
         parameters: ./iac/parameters.json
