@@ -9,7 +9,7 @@ jobs:
   deploy-infrastructure:
     runs-on: ubuntu-latest
     env:
-      ACR_NAME: myContainerRegistry
+      ACR_NAME: MyRegistry
       IMAGE_NAME: myAppImage
       IMAGE_TAG: latest
       RESOURCE_GROUP: myResourceGroup
