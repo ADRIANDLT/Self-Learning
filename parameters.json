@@ -6,7 +6,7 @@
         "value": "myContainerRegistry"
       },
       "containerRegistryLocation": {
-        "value": "East US"
+        "value": "West Europe"
       },
       "containerRegistryImageName": {
         "value": "myImage"
@@ -18,13 +18,13 @@
         "value": "myAppServicePlan"
       },
       "appServicePlanLocation": {
-        "value": "East US"
+        "value": "West Europe"
       },
       "webAppName": {
         "value": "myWebApp"
       },
       "webAppLocation": {
-        "value": "East US"
+        "value": "West Europe"
       }
     }
   }
